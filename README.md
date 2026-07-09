@@ -1,28 +1,31 @@
-# Project Title
+# JPEG Compressor
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
-
-A brief description of what this project does and who it's for. Explain the main problem it solves and why someone might want to use it.
+A lightweight image processing tool that demonstrates how to read, process, and compress JPEG images. The core logic is written in C++ using the `stb_image` libraries for efficient, dependency-free image manipulation, alongside a Python script for additional encoding operations.
 
 ---
 
-## Features
+## 📁 Repository Structure
 
-* **Feature 1:** Briefly describe this core feature.
-* **Feature 2:** Mention another great capability.
-* **Feature 3:** Highlight what makes your project unique.
+* **`main.cpp`**: The core C++ source code responsible for loading the image, performing the compression/processing, and saving the output.
+* **`encoder.py`**: Python script handling encoding tasks and utility functions for the compression pipeline.
+* **`stb_image.h` & `stb_image_write.h`**: Single-header libraries by Sean Barrett used to read and write various image formats in C/C++ without external dependencies.
+* **Executables**: Pre-compiled Windows binaries (`a.exe`, `compressor.exe`).
+* **Sample Images**:
+  * `input.jpg`: The original, uncompressed source image.
+  * `output_compressed.jpg`: Standard compressed output.
+  * `output_50pct.jpg`: Image demonstrating compression at 50% quality.
+  * `output_color.jpg` & `output_pro.jpg`: Additional processed output samples.
 
-## Prerequisites
+## ⚙️ Prerequisites
 
-Before you begin, ensure you have met the following requirements:
-* [Requirement 1] (e.g., Python 3.8+)
-* [Requirement 2] (e.g., Node.js v14+)
+To compile and run this project from source, you will need:
+* A C++ compiler (e.g., GCC/G++, MinGW, or MSVC)
+* Python 3.x (to run the encoder script)
 
-## Installation
+## 🚀 Build Instructions
 
-To install **Project Title**, follow these steps:
+Because the project uses the header-only `stb` libraries, compiling is straightforward. You do not need to link any bulky external libraries.
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+**Using G++ (Linux/macOS/MinGW):**
+```bash
+g++ main.cpp -o compressor.exe
